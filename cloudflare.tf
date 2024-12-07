@@ -40,7 +40,7 @@ resource "cloudflare_record" "_atproto_daniellemaywood_uk_TXT_bsky" {
 resource "cloudflare_pages_project" "home" {
   account_id        = var.cf_account_id
   name              = "daniellemaywood"
-  production_branch = "prod"
+  production_branch = "main"
 
   build_config {
     build_command   = "npm run build"
@@ -49,6 +49,7 @@ resource "cloudflare_pages_project" "home" {
 
   source {
     type = "github"
+
     config {
       owner     = "DanielleMaywood"
       repo_name = "daniellemaywood.uk"
